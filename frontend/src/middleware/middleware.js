@@ -5,9 +5,7 @@ import BaseModel from '../model/base'
 
 const Middleware = (props) => {
     const history = useHistory()
-    console.log(props)
     useEffect(() => {
-        console.log('md2')
         if (window.location.pathname !== '/site/register') {
             const token = localStorage.getItem('access_token');
             const decoded = token ? jwt(token) : null;

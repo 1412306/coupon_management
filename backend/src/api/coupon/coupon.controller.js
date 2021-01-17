@@ -37,11 +37,8 @@ const list = async (req, res) => {
 const summary = async (req, res) => {
     try {
         const couponBusiness = new CouponBusiness()
-        let used = await couponBusiness.count('USED');
-        let expired = await couponBusiness.count('EXPIRED');
-        let ready = await couponBusiness.count('READY');
-
-        return res.status(200).json({used, expired, ready, message: 'Summary success!'});
+        const [used, expired, ready] = await Promise.all([couponBusiness.count('USED'), couponBusiness.count('EXPIRED'), couponBusiness.count('READY')]);
+        return res.status(200).json({summary: {used, expired, ready}, message: 'Summary success!'});
     } catch (error) {
         console.log(error)
         return res.status(500).send({

@@ -45,7 +45,6 @@ const ConfirmTimeExtend = (props) => {
                 extendTime = duration * 60 * 1000;
                 break;
             case 2:
-                console.log('aa')
                 extendTime = duration * 60 * 60 * 1000;
                 break;
             case 3:

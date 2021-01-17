@@ -7,6 +7,6 @@ router.post("/create", CouponController.create);
 router.post("/list", CouponController.list);
 router.put("/extend", CouponController.extend);
 router.put("/apply", CouponController.apply);
-router.get("/summary", CouponController.summary);
+router.post("/summary", CouponController.summary);
 
 module.exports = router;

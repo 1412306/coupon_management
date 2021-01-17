@@ -89,11 +89,7 @@ const coupon = (state = initialState, action) => {
             return {
                 ...state,
                 summarizing: false,
-                summaryData: {
-                    used: action.data.used,
-                    expired: action.data.expired,
-                    ready: action.data.ready
-                }
+                summaryData: action.data.summary
             }
         case actionTypes.SUMMARY_COUPON_FAILURE:
             return {

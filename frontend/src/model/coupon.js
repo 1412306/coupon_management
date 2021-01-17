@@ -36,7 +36,7 @@ const CouponModel = {
   summary: () => {
     return new Promise((resolve) => {
       let url = 'api/coupon/summary';
-      BaseModel.get(url, null, function (response) {
+      BaseModel.post(url, null, function (response) {
         resolve(response);
       })
     })

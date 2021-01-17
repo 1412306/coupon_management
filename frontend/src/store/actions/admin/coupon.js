@@ -115,7 +115,7 @@ function* fetchSummaryCoupon(action) {
         const response = yield call(CouponModel.summary);
         if (response.data) {
             const data = response.data;
-            if(data.used && data.ready && data.expired){
+            if(data.summary){
                 yield put({type: SUMMARY_COUPON_SUCCESS, data})
             }else {
                 yield put({type: SUMMARY_COUPON_FAILURE, data})
